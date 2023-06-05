@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+
+    <style>
+        /* Global styles */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+        }
+
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+
+        /* Alert styles */
+        .alert {
+          padding: 15px;
+          margin-bottom: 20px;
+          border: 1px solid transparent;
+          border-radius: 4px;
+        }
+
+        .alert-success {
+          background-color: #d4edda;
+          border-color: #c3e6cb;
+          color: #155724;
+        }
+
+        .alert-danger {
+          background-color: #f8d7da;
+          border-color: #f5c6cb;
+          color: #721c24;
+        }
+
+        .alert-dismissible {
+          position: relative;
+          padding-right: 35px;
+          margin-bottom: 1rem;
+        }
+
+        .alert strong {
+          font-weight: bold;
+        }
+
+        .close {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 15px;
+          color: inherit;
+        }
+
+        /* Button styles */
+        button {
+          display: inline-block;
+          padding: 10px 20px;
+          margin-top: 10px;
+          border: none;
+          border-radius: 4px;
+          background-color: #007bff;
+          color: #fff;
+          text-decoration: none;
+          font-size: 16px;
+          cursor: pointer;
+        }
+
+        button a {
+          color: #fff;
+          text-decoration: none;
+        }
+
+        button:hover {
+          background-color: #0056b3;
+        }
+
+        button:active {
+          background-color: #004b9e;
+        }
+
+        /* Heading styles */
+        h3 {
+          margin-top: 20px;
+        }
+
+        h4 {
+          margin-top: 10px;
+        }
+
+        /* Form styles */
+        form {
+          margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            <strong>Message:</strong> {{ message }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {% endfor %}
+
+        <h3>Welcome to GeeksForGeeks!</h3>
+
+        {% if user.is_authenticated %}
+        <h3>Hello {{fname}}!</h3>
+        <h4>You're successfully logged in.</h4>
+        <button type="submit"><a href="/signout">SignOut</a></button>
+        {% else %}
+        <button type="submit"><a href="/signup">SignUp</a></button>
+        <br/>
+        <br/>
+        <button type="submit"><a href="/signin">SignIn</a></button>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+        <h3>Sign Up</h3>
+        <form action="/signup" method="post">
+        {% csrf_token %}
+            <label for="">Username</label>
+            <input type="text" name="username" id="username" placeholder="Create a username(only letters and numbers)">
+            <br>
+            <br>
+            <label for="">First Name</label>
+            <input type="text" name="fname" id="fname" placeholder="Enter your first name">
+            <br>
+            <br>
+            <label for="">Last Name</label>
+            <input type="text" name="lname" id="lname" placeholder="Enter your last name">
+            <br>
+            <br>
+            <label for="">Email Address</label>
+            <input type="text" name="email" id="email" placeholder="Enter your Email Address">
+            <br>
+            <br>
+            <label for="">Password</label>
+            <input type="password" name="pass1" id="pass1" placeholder="Create a Password">
+            <br>
+            <br>
+            <label for="">Confirm your Password</label>
+            <input type="password" name="pass2" id="pass2" placeholder="Confirm the Password">
+            <br>
+            <br>
+            <button type="submit">Sign Up</button>
+        </form>
+<style>/* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Form styles */
+    form {
+      margin-top: 20px;
+    }
+    
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    
+    button[type="submit"] {
+      display: inline-block;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+    
+    button[type="submit"]:active {
+      background-color: #004b9e;
+    }
+    </style>       
+        <script src="" async defer></script>
+    </body>
+</html>
